@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Mike Bashkatov
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,11 +25,11 @@ namespace ArrayListSimpleEx
 
         private void arrayListOperation()
         {
-            text.Add("I ");
-            text.Add("Love ");
-            text.Add("Programming ");
-            text.Add("So ");
-            text.Add("Much ");
+            text.Add("I");
+            text.Add("Love");
+            text.Add("Programming");
+            text.Add("So");
+            text.Add("Much");
         }
 
         private void str()
@@ -36,7 +37,7 @@ namespace ArrayListSimpleEx
             progrText = "";
             for (int i = 0; i < text.Count; i++)
             {
-                progrText += text[i].ToString();
+                progrText += text[i].ToString() + " ";
             }
         }
 
@@ -71,8 +72,14 @@ namespace ArrayListSimpleEx
             {
                 MessageBox.Show("Please show message in a regular order first");
             }
+
+            else if (txtSecondPos.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter at least something");
+            }
             else
             {
+                addedText.TrimStart();
                 text.Insert(2, addedText);
             }
         }
@@ -85,7 +92,7 @@ namespace ArrayListSimpleEx
             }
             else
             {
-                if(text.Count < 2)
+                if(text.Count <= 2)
                 {
                     MessageBox.Show("Phrase is alreDY TOO SMALL!");
                 }
